@@ -1,0 +1,121 @@
+.blog.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-main {
+    padding: 20px;
+    margin: 20px 10px;
+}
+
+.aside {
+    margin: 20px 10px;
+    padding: 0;
+}
+
+.aside .container {
+    padding: 10px;
+}
+
+.blog-post-card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    border: 1px solid var(--primary-1);
+    box-shadow: var(--smal-shadow);
+    border-radius: 10px;
+    background-color: var(--less-dark);
+}
+
+.blog-post-card-image>img {
+    width: 100%;
+}
+
+.blog-post-card-image {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.blog-post-card-body {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.blog-post-card-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.blog-post-card-info .link {
+    color: var(--white) !important;
+}
+
+.blog-post-card-info>span {
+    margin: 2px 10px 0 0;
+}
+
+.blog-post-card-text {
+    min-height: 100px;
+}
+
+.blog-post-card-cta {
+    margin-top: auto;
+    text-align: right;
+}
+
+.aside .searchbox {
+    width: 100%;
+}
+
+.aside .searchbox input {
+    width: 80%;
+}
+
+.latest-posts ul {
+    list-style: decimal;
+    margin: 0 0 0 15px;
+    padding: 0 7px 0 0;
+    display: block;
+    padding: 4px;
+}
+
+.latest-posts .link {
+    color: var(--white) !important;
+    font-weight: 400 !important;
+    display: block;
+    margin: 5px 0 0 0;
+}
+
+@media all and (min-width: 1080px) {
+    .blog-post-card {
+        flex-direction: row;
+        height: fit-content;
+    }
+    .blog-post-card-image img {
+        height: 100%;
+        width: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .blog-post-card-image {
+        position: relative;
+        overflow: hidden;
+        width: 43%;
+        border-radius: 10px 0 0 10px;
+        min-width: 400px;
+    }
+    .blog-main {
+        width: 75%;
+    }
+    .blog.container {
+        flex-direction: row;
+    }
+    .aside {
+        width: 22%;
+    }
+}

@@ -1,0 +1,430 @@
+.me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background: url('../assets/1.jpg') 0 50% no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid var(--hover);
+    box-shadow: 0 0 10px var(--hover);
+}
+
+.me .text {
+    width: 100%;
+    margin: 20px 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 10px black;
+}
+
+.me>img {
+    filter: blur(4px);
+    height: 100%;
+    width: 100%;
+}
+
+.presentation {
+    margin: 0 auto !important;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.wrap {
+    margin: 0 auto 200px auto;
+}
+
+.presentation .artboard {
+    flex: 1;
+}
+
+
+/* Reset */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (min-width: 112.5em) {
+    html {
+        font-size: 75%;
+    }
+}
+
+.artboard {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+
+@media (max-width: 37.5em) {
+    .artboard {
+        padding: 0;
+        margin: 20px auto;
+    }
+    .presentation {
+        padding: 0;
+    }
+    .me h1 {
+        font-size: 30px !important;
+    }
+}
+
+.card .cta {
+    text-align: center;
+}
+
+.card {
+    flex: initial;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    -moz-perspective: 200rem;
+    perspective: 200rem;
+    margin: 2rem;
+    margin-bottom: 10rem;
+}
+
+.card__side {
+    height: 48rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    /* We don't want to see the back part of the element. */
+    backface-visibility: hidden;
+    /* We don't want to see the back part of the element. */
+    border-radius: 3px;
+    overflow: hidden;
+    /* The image is overflowing the parent. */
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+}
+
+.card__side--back {
+    background-color: var(--less-dark);
+    transform: rotateY(180deg);
+}
+
+.card:hover .card__side--back {
+    transform: rotateY(0);
+}
+
+.card:hover .card__side--front {
+    transform: rotateY(-180deg);
+}
+
+.card__theme {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    width: 90%;
+    text-align: center;
+}
+
+.card__theme-box {
+    color: #fff;
+    margin-bottom: 8rem;
+}
+
+.card__subject {
+    font-family: "Inconsolata", monospace;
+    letter-spacing: 0.8rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.card__title {
+    font-family: 'dancing script';
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.card__cover {
+    position: relative;
+    background-size: cover;
+    height: 10rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.card__heading {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+}
+
+.card__heading-span {
+    font-family: "dancing script";
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: #fff;
+}
+
+.card__details {
+    font-family: "Inconsolata", monospace;
+    padding: 2rem 2rem;
+}
+
+.card__details ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card__details ul li {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+.card__details ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+@media only screen and (max-width: 37.5em),
+only screen and (hover: none) {
+    .card {
+        height: auto;
+        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+    }
+    .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .card__side--back {
+        transform: rotateY(0);
+    }
+    .card:hover .card__side--front {
+        transform: rotateY(0);
+    }
+    .card__details {
+        padding: 3rem 2rem;
+    }
+    .card__theme {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 5rem 4rem 1.5rem 4rem;
+        text-align: center;
+    }
+    .card__theme-box {
+        margin-bottom: 1.5rem;
+    }
+    .card__title {
+        font-size: 4rem;
+    }
+    .card .cta {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* THEME: VARS */
+
+.slider {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 670px !important;
+    width: 100%;
+}
+
+.slick-slide {
+    height: 670px !important;
+    padding: 50px;
+    background-image: linear-gradient(to top right, rgba(11, 26, 54, 0.65), rgba(55, 202, 141, 0.7)), url('../assets/untitled.mp4');
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+}
+
+.slick-slide img {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+}
+
+.slide-content ul {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.slide-content>ul>li {
+    margin-bottom: 10px;
+}
+
+.slide-content h2 {
+    margin-bottom: 30px;
+}
+
+.slide-content .cta {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.slide-content .cta a {
+    width: 150px;
+    text-align: center;
+}
+
+
+/* SLICK: ARROWS */
+
+.slick-custom-arrow {
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent;
+    color: white;
+}
+
+.slick-custom-arrow>i {
+    transition: transform ease .3s;
+    font-size: 40px;
+    padding: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.431);
+    cursor: pointer;
+}
+
+.slick-custom-arrow>i:hover {
+    transform: scale(1.5);
+}
+
+.slick-custom-arrow-right {
+    right: 0;
+    top: 50%;
+}
+
+.slick-custom-arrow-left {
+    left: 0;
+    top: 50%;
+}
+
+
+/* SLICK: DOTS */
+
+.slick-dots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.slick-dots .slick-active button {
+    border: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+}
+
+.slick-dots li {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 4px;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.slick-dots li button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 1;
+    display: block;
+    height: 18px;
+    width: 18px;
+    outline: none;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+}
+
+@media all and (max-width: 600px) {
+    .slider h1 {
+        font-size: 25px !important;
+    }
+    .slick-slide {
+        padding: 20px;
+    }
+    .slider h2 {
+        font-size: 20px !important;
+    }
+    .slick-custom-arrow>i {
+        font-size: 30px;
+        padding: 10px;
+    }
+    .slick-custom-arrow>i:hover {
+        transform: none;
+        color: rgb(141, 255, 198);
+    }
+}
